@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+input[type="text"],
+input[type="radio"],
+input[type="submit"] {
+    margin-bottom: 10px;
+}
+
+.radio-btns {
+    margin-left: 120px;
+}
+
+.calc-btn {
+    margin-left: 120px;
+}
+
+.result {
+    font-size: 28px;
+}
