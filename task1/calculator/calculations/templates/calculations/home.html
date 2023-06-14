@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label for="first_number" style="margin-left: 22px;">First Number:</label>
+        <input type="text" name="first_number" required><br><br>
+        
+        <label for="second_number">Second Number:</label>
+        <input type="text" name="second_number" required><br><br>
+        <div class="radio-btns">
+        <input type="radio" name="operation" value="add" required>add<br>
+        <input type="radio" name="operation" value="subtract" required>substract<br>
+        <input type="radio" name="operation" value="multiply" required>multiply<br>
+        <input type="radio" name="operation" value="divide" required>divide<br><br>
+        </div>
+        <input class="calc-btn" type="submit" value="Calculate">
+    </form>
+{% if result %}
+    <h2>Result:</h2>
+    <p class="result">Result: {{ expression }} = {% if result|floatformat:0 == result|stringformat:".0f" %}{{ result|floatformat:0 }}{% else %}{{ result|floatformat:2 }}{% endif %}</p>
+{% endif %}
+</body>
+</html>
